@@ -850,7 +850,7 @@ var render = function () {
     [
       _c("Navbar"),
       _vm._v(" "),
-      _c("div", [_c("ExampleComponentVue")], 1),
+      _c("div", { staticClass: "py-5" }, [_c("ExampleComponentVue")], 1),
       _vm._v(" "),
       _c("Footer"),
     ],

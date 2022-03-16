@@ -1,7 +1,7 @@
 <template>
     <div>
         <Navbar></Navbar>
-        <div>
+        <div class="py-5">
             <ExampleComponentVue></ExampleComponentVue>
         </div>
         <Footer></Footer>

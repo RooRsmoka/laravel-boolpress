@@ -23,7 +23,7 @@ Route::middleware('auth')
     ->group(function() {
         Route::get('/', 'HomeController@index')->name('home');
         Route::resource('posts', 'PostController');
-        Route::get("users", "UserController@index")->name("users.index");
+        Route::resource("users", "UserController");
     });
 
 Route::get('{any?}', function() {

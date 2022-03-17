@@ -15,9 +15,14 @@
                         {!! $post->content !!}
                     </p>
                     <div class="my-3">
-                        Data creazione: {{ $post->created_at }}
+                        @php
+                            $dateFormat = 'd/m/Y H:i'
+                        @endphp
+                        
+                        Data creazione: {{ $post->created_at->format($dateFormat) }}
                         <br>
-                        Data ultima modifica: {{ $post->updated_at }}
+                        Data ultima modifica: {{ $post->updated_at->format($dateFormat) }}
+                        {{ $post->updated_at->diffForHumans() }}
                         <br>
                         Slug: {{ $post->slug }}
                     </div>

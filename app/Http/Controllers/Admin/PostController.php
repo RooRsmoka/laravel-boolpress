@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Category;
 use App\Post;
-use App\Http\Controllers\Controller;
 use App\Tag;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -74,7 +74,9 @@ class PostController extends Controller
         $post->user_id = Auth::user()->id;
         $post->save();
 
-        $post->tags()->attach($data['tags']);
+        if (key_exists('tags', $data)) {
+            $post->tags()->attach($data['tags']);
+        }
 
         return redirect()->route('admin.posts.index');
     }
@@ -152,6 +154,8 @@ class PostController extends Controller
         $post->tags()->detach();
 
         $post->delete();
+
+        return redirect()->route('admin.posts.index');
     }
 
 

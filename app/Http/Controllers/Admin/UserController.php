@@ -75,7 +75,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $data = $request->validate([
             'name' => 'required|min:2',
-            'email' => 'required|email|unique:users, email',
+            'email' => 'required|email|unique:users,email,' . $id,
         ]);
 
         $user->update($data);

@@ -1,21 +1,30 @@
 <template>
     <div>
         <Navbar></Navbar>
-        <div class="py-5">
-            <ExampleComponentVue></ExampleComponentVue>
+        <div class="container py-5">
+            <!-- <div>
+                <PostCard v-for='post of posts' :key='post.id' :post="post"></PostCard>
+            </div> -->
+            <router-view></router-view>
         </div>
         <Footer></Footer>
     </div>
 </template>
 
 <script>
-import ExampleComponentVue from "../components/ExampleComponent.vue";
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
+// import PostCard from "../components/PostCard.vue";
 
 export default {
-    components: { ExampleComponentVue, Navbar, Footer },
+    components: { Navbar, Footer },
+    // data() {
+    //     return {
+    //         posts: [],
+    //     }
+    // }
 };
 </script>
 
-<style></style>
+<style scoped lang="scss">
+</style>

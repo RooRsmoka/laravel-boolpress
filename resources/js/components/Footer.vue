@@ -1,11 +1,14 @@
 <template>
-  <footer>
-    <h3>Il mio footer</h3>
-  </footer>
+    <footer>
+        <div class="container">
+            <h3>Il mio footer</h3>
+        </div>
+    </footer>
 </template>
 
 <script>
 export default {};
 </script>
 
-<style></style>
+<style scoped lang="scss">
+</style>

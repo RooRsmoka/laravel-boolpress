@@ -21,7 +21,18 @@
                                 @endphp
                                 <small class="fst-italic">{{ $post->created_at->format($dateFormat) }} - {{ $post->user->name }} - {{ isset($post->category) ? $post->category->name : "senza categoria" }}</small>
                             </div>
-                            <a class="ms-auto" href="{{ route('admin.posts.show', $post->slug) }}">Mostra</a>
+                            <div class="ms-auto">
+                                <a class="me-3" href="{{ route('admin.posts.show', $post->slug) }}" title="View">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <a class="text-dark" href="{{ route('admin.posts.edit', $post->slug) }}" title="Edit">
+                                    <i class="fa-solid fa-edit"></i>
+                                </a>
+                                @include('partials.deleteBtn', [
+                                    'id' => $post->id,
+                                    'route' => 'admin.posts.destroy'
+                                ])
+                            </div>
                         </li>
                         @endforeach
                     </ul>

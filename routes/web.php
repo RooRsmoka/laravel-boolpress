@@ -23,9 +23,10 @@ Route::middleware('auth')
     ->group(function() {
         Route::get('/', 'HomeController@index')->name('home');
         Route::resource('posts', 'PostController');
-        Route::resource("users", "UserController");
+        Route::resource('users', 'UserController');
+        Route::get('contacts', 'ContactController@index')->name('contacts.index');
     });
 
 Route::get('{any?}', function() {
     return view('home');
-})->where('any', '.*');
+})->where('any', '.*'); 
